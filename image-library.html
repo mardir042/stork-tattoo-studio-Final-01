@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tattoo Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<h1 class="center">Tattoo Gallery</h1>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button onclick="filterGallery('all')">All</button>
+  <button onclick="filterGallery('realism')">Realism</button>
+  <button onclick="filterGallery('minimal')">Minimal</button>
+  <button onclick="filterGallery('mandala')">Mandala</button>
+</div>
+
+<!-- GALLERY -->
+<section class="tattoo-gallery">
+  <div class="gallery-grid">
+
+    <div class="gallery-item realism" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1769350491/C7846E68-713C-49C4-BB0B-091224BD2D4F.jpg_otl9mn.png">
+    </div>
+
+    <div class="gallery-item minimal" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1769350492/438662BF-69EE-4740-93CF-05159D728244.jpg_r4oike.png">
+    </div>
+
+    <div class="gallery-item mandala" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1769350131/WhatsApp_Image_2025-12-28_at_21.02.15_zjgbsc.jpg">
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<script>
+function openModal(el){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalImg").src = el.querySelector("img").src;
+}
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+function filterGallery(cat){
+  document.querySelectorAll(".gallery-item").forEach(item=>{
+    item.style.display = (cat==="all" || item.classList.contains(cat)) ? "block" : "none";
+  });
+}
+</script>
+
+</body>
+</html>

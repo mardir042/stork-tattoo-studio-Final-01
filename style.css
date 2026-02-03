@@ -1,0 +1,432 @@
+:root{
+  --black:#000;
+  --orange:#d4481f;
+  --white:#fff;
+  --cream:#f7f5f2;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--black);
+  color:var(--white);
+}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 40px;
+  background:#000;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{height:45px}
+.menu a{
+  color:white;
+  margin-left:22px;
+  text-decoration:none;
+}
+.cta{
+  background:var(--orange);
+  padding:8px 18px;
+  border-radius:20px;
+}
+
+/* HERO */
+.hero-cinematic{
+  height:90vh;
+  background:url('images/hero-bg.jpg') center/cover;
+}
+.hero-overlay{
+  height:100%;
+  background:rgba(0,0,0,.75);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero-overlay h1{
+  font-size:64px;
+  margin-bottom:15px;
+}
+.hero-btn{
+  margin-top:20px;
+  background:var(--orange);
+  color:white;
+  padding:14px 34px;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* STORY */
+.story-section{
+  background:var(--cream);
+  padding:80px 20px;
+}
+.story-card{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+}
+.story-image img{width:100%;height:100%;object-fit:cover}
+.story-text{
+  padding:50px;
+  color:black;
+}
+.story-text span{font-style:italic}
+
+/* PROCESS */
+.process-section{
+  background:white;
+  color:black;
+  padding:80px 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+.process-card{
+  background:var(--cream);
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+}
+.process-card span{
+  font-size:32px;
+  font-weight:bold;
+  color:var(--orange);
+}
+
+/* ARTISTS */
+.artists-section{
+  padding:80px 20px;
+  text-align:center;
+}
+.artists{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+.artist-card{
+  background:#111;
+  border-radius:20px;
+  padding:20px;
+}
+.artist-card img{
+  width:100%;
+  border-radius:14px;
+}
+
+/* HYGIENE */
+.hygiene-section{
+  background:var(--cream);
+  color:black;
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* BOOKING */
+.booking{
+  padding:80px 20px;
+  text-align:center;
+}
+form{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+}
+input,textarea{
+  padding:12px;
+  margin:8px;
+  border-radius:8px;
+  border:none;
+}
+button{
+  background:var(--orange);
+  color:white;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .story-card{
+    grid-template-columns:1fr;
+  }
+  .hero-overlay h1{
+    font-size:42px;
+  }
+}
+
+/* BOOKING FORM */
+select{
+  padding:12px;
+  margin:8px;
+  border-radius:8px;
+  border:none;
+}
+
+/* GALLERY FILTERS */
+.filters{
+  text-align:center;
+  margin-bottom:20px;
+}
+.filters button{
+  background:#222;
+  color:white;
+  padding:8px 16px;
+  border:none;
+  margin:4px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* GALLERY */
+.gallery img{
+  transition:.3s;
+}
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+.artists{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  padding:20px;
+}
+
+.artist-card{
+  background:#111;
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+}
+
+.artist-card img{
+  width:100%;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+
+.artist-card a{
+  color:var(--orange);
+  text-decoration:none;
+  font-weight:bold;
+}
+.content-page{
+  max-width:900px;
+  margin:auto;
+  padding:80px 20px;
+  line-height:1.7;
+}
+
+.review-card{
+  background:#111;
+  padding:20px;
+  border-radius:15px;
+  margin:20px 0;
+}
+
+/* MAP */
+.map-section{
+  padding:80px 20px;
+  text-align:center;
+}
+.map-section iframe{
+  width:90%;
+  height:320px;
+  border-radius:12px;
+  border:0;
+}
+/* FLOATING SOCIAL BUTTONS */
+.social-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:2000;
+}
+
+.social-btn{
+  padding:12px 16px;
+  border-radius:30px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  transition:transform .2s ease;
+}
+
+.social-btn:hover{
+  transform:scale(1.05);
+}
+
+.social-btn.whatsapp{
+  background:#25D366;
+}
+
+.social-btn.instagram{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+
+/* ================================
+   TATTOO GALLERY – FINAL VERSION
+   (Reference-style professional size)
+================================ */
+
+/* Gallery Section 
+.tattoo-gallery {
+  padding: 60px 5%;
+  background: #fff;
+}
+
+/* Grid Layout 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+/* Image Card 
+.gallery-item {
+  position: relative;
+  width: 100%;
+  height: 380px;              /* ✅ Reference size 
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+}
+
+/* Image 
+.gallery-item img {
+  width: 10%;
+  height: 10%;
+  object-fit: cover;          /* ✅ Prevent stretch 
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+/* Hover Effect 
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Mobile Optimization 
+@media (max-width: 600px) {
+  .gallery-item {
+    height: 340px;
+  }
+}
+
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.center{
+  text-align:center;
+  margin:30px 0;
+}
+
+/* FILTERS */
+.filters{
+  text-align:center;
+  margin-bottom:30px;
+}
+.filters button{
+  background:#222;
+  color:white;
+  padding:8px 18px;
+  margin:4px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* GALLERY SECTION */
+.tattoo-gallery{
+  padding:40px 6%;
+  background:#fff;
+}
+
+/* GRID */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+
+/* CARD (REFERENCE SIZE) */
+.gallery-item{
+  height:360px;                 /* 🔑 This controls size */
+  border-radius:18px;
+  overflow:hidden;
+  background:red;
+  cursor:pointer;
+}
+
+/* IMAGE */
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;             /* 🔑 PERFECT CROPPING */
+  transition:transform .4s ease;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.06);
+}
+
+/* MODAL */
+#modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .gallery-item{
+    height:300px;
+  }
+}
+.gallery-item img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+}

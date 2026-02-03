@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tattoo Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<h1 class="center">Tattoo Gallery</h1>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button onclick="filterGallery('all')">All</button>
+  <button onclick="filterGallery('realism')">Realism</button>
+  <button onclick="filterGallery('minimal')">Minimal</button>
+  <button onclick="filterGallery('mandala')">Mandala</button>
+</div>
+
+<!-- GALLERY -->
+<section class="tattoo-gallery">
+  <div class="gallery-grid">
+
+    <!-- REALISM -->
+    <div class="gallery-item realism show" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1769350491/C7846E68-713C-49C4-BB0B-091224BD2D4F.jpg_otl9mn.png" alt="Realism Tattoo">
+    </div>
+
+    <div class="gallery-item realism show" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1770103734/tattoo_oqbeuu.png" alt="Realism Tattoo">
+    </div>
+
+    <!-- MINIMAL -->
+    <div class="gallery-item minimal show" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1769350492/438662BF-69EE-4740-93CF-05159D728244.jpg_r4oike.png" alt="Minimal Tattoo">
+    </div>
+
+    <!-- MANDALA -->
+    <div class="gallery-item mandala show" onclick="openModal(this)">
+      <img src="https://res.cloudinary.com/donipkohh/image/upload/v1769350131/WhatsApp_Image_2025-12-28_at_21.02.15_zjgbsc.jpg" alt="Mandala Tattoo">
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" onclick="closeModal()">
+  <img id="modalImg" alt="Tattoo Preview">
+</div>
+
+<!-- SCRIPT -->
+<script>
+function openModal(el){
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  modal.style.display = "flex";
+  modalImg.src = el.querySelector("img").src;
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+
+function filterGallery(category){
+  const items = document.querySelectorAll(".gallery-item");
+
+  items.forEach(item => {
+    if(category === "all" || item.classList.contains(category)){
+      item.classList.remove("hide");
+      item.classList.add("show");
+    } else {
+      item.classList.remove("show");
+      item.classList.add("hide");
+    }
+  });
+}
+</script>
+
+</body>
+</html>
